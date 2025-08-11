@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Paul Courtney Care Consulting</title>
+<meta name="description" content="Outstanding dementia care, lived every day. Turnarounds, audits, leadership development and lived-experience programmes that deliver evidence-based outcomes." />
+<meta name="format-detection" content="telephone=no">
+<style>
+  /* ----- Base & Reset ----- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+    color: #0b1220;
+    background: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: #0b5fff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; height: auto; }
+  :root{
+    --brand:#0b5fff;
+    --brand-2:#5a7cff;
+    --ink:#0b1220;
+    --muted:#5b677a;
+    --bg-soft:#f4f7ff;
+    --accent:#00b894;
+    --warn:#ffb019;
+    --ok:#13b497;
+    --card:#ffffff;
+    --shadow: 0 6px 24px rgba(11,18,32,.08);
+    --radius: 14px;
+  }
+
+  /* ----- Layout ----- */
+  .container { width: min(1100px, 92vw); margin: 0 auto; }
+  .section { padding: 64px 0; }
+  @media (min-width: 768px){
+    .section { padding: 88px 0; }
+  }
+
+  /* ----- Header ----- */
+  header {
+    position: sticky;
+    top: 0; z-index: 999;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: saturate(160%) blur(10px);
+    box-shadow: 0 1px 0 rgba(11,18,32,.06);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 14px 0;
+  }
+  .brand {
+    font-weight: 800; letter-spacing:.2px; font-size: 18px; color: var(--ink);
+  }
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 10px;
+    background: var(--brand);
+    color: white; border: 0; border-radius: 999px;
+    padding: 12px 18px; font-weight: 700; font-size: 15px;
+    box-shadow: 0 10px 24px rgba(11,95,255,.22);
+    cursor: pointer;
+  }
+  .cta:active { transform: translateY(1px); }
+  .cta.secondary{
+    background: #eef3ff; color: var(--brand);
+    box-shadow: none; border: 1px solid #dbe6ff;
+  }
+  .nav-links { display: none; gap: 14px; align-items: center; }
+  @media (min-width: 900px){ .nav-links{ display: flex; } }
+
+  /* ----- Hero ----- */
+  .hero {
+    background: radial-gradient(80% 120% at 10% -10%, #e9f0ff 0, transparent 60%), 
+                radial-gradient(80% 120% at 110% 10%, #f1fff9 0, transparent 50%), 
+                linear-gradient(180deg, #ffffff 0, #f9fbff 100%);
+  }
+  .hero-wrap{
+    display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center;
+    padding: 28px 0 12px;
+  }
+  @media (min-width: 900px){
+    .hero-wrap{ grid-template-columns: 1.2fr .8fr; gap: 36px; padding: 48px 0 0; }
+  }
+  .eyebrow { color: var(--brand); font-weight: 800; font-size: 13px; letter-spacing:.3px; text-transform: uppercase; }
+  h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 6px 0 12px; }
+  .sub { color: var(--muted); font-size: clamp(15px, 2.5vw, 18px); }
+  .badges { display:flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
+  .badge {
+    display:inline-flex; align-items:center; gap: 8px; padding:8px 12px;
+    background: #ffffff; border:1px solid #e8eefc; border-radius: 999px;
+    font-weight: 700; font-size: 13px; color: #33415a;
+  }
+  .file-note{
+    font-size: 13px; color: var(--muted); margin-top: 6px;
+  }
+  .visuals {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: #dde6ff;
+    min-height: 260px;
+  }
+  .visuals::after{
+    content:"Visuals placeholder"; position:absolute; inset:0; display:flex;
+    align-items:center; justify-content:center; font-weight:700; color:#334;
+  }
+  .overlay-tags{
+    position:absolute; bottom:10px; left:10px; right:10px; display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .chip{
+    background: rgba(255,255,255,.92); border:1px solid rgba(11,18,32,.08); 
+    padding:6px 10px; font-weight:700; border-radius:999px; font-size:12px;
+  }
+
+  /* ----- Stats ----- */
+  .stats{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    margin-top: 18px;
+  }
+  @media (min-width: 700px){
+    .stats{ grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  }
+  .stat{
+    background: var(--card); border: 1px solid #e9edf7; border-radius: 16px; padding: 18px;
+    box-shadow: var(--shadow); min-height: 110px;
+  }
+  .stat .big { font-size: clamp(26px, 4.2vw, 34px); font-weight:800; line-height:1; }
+  .stat .label { color: var(--muted); font-weight:700; font-size: 13px; margin-top: 6px; }
+
+  /* ----- About / Services ----- */
+  .lead {
+    font-size: clamp(18px, 2.8vw, 20px);
+    color: #2a3447;
+  }
+  .cards{
+    display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px;
+  }
+  @media (min-width: 800px){
+    .cards{ grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+  .card{
+    background: var(--card); border: 1px solid #e9edf7; border-radius: var(--radius);
+    padding: 18px; box-shadow: var(--shadow);
+  }
+  .card h3{ margin: 0 0 6px; font-size: 18px; }
+  .card p{ margin: 0; color: #3d4a5f; }
+
+  /* ----- Quotes ----- */
+  .quotes{
+    background: var(--bg-soft);
+    border-top:1px solid #e5ebfb; border-bottom:1px solid #e5ebfb;
+  }
+  blockquote{
+    margin: 0; padding: 0; font-size: clamp(18px, 3vw, 22px); font-weight: 800;
+    color:#172036;
+  }
+  .q-grid{ display:grid; gap: 18px; }
+  @media (min-width: 800px){
+    .q-grid{ grid-template-columns: 1fr 1fr; gap: 26px; }
+  }
+
+  /* ----- Booking ----- */
+  .booking { }
+  .booking-grid{
+    display:grid; grid-template-columns: 1fr; gap: 16px; align-items: start;
+  }
+  @media (min-width: 900px){
+    .booking-grid{ grid-template-columns: 1.1fr .9fr; gap: 24px; }
+  }
+  .panel{
+    background: var(--card); border: 1px solid #e9edf7; border-radius: var(--radius);
+    padding: 18px; box-shadow: var(--shadow);
+  }
+  .calendar-placeholder{
+    min-height: 320px; background: linear-gradient(180deg,#f9fbff, #eef3ff);
+    border: 1px dashed #c8d8ff; border-radius: var(--radius);
+    display:flex; align-items:center; justify-content:center;
+    font-weight: 700; color:#3c4a6b;
+  }
+  .contact a{ font-weight: 800; }
+  .actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .sr-only{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+  /* ----- Footer ----- */
+  footer{
+    padding: 36px 0; color: #5a6a85; font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <a class="sr-only" href="#booking">Skip to booking</a>
+  <header role="banner" aria-label="Site header">
+    <div class="container nav">
+      <div class="brand">Paul Courtney Care Consulting</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#impact">Impact</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+      </nav>
+      <a class="cta" href="#booking" aria-label="Book a call">Book a Call</a>
+    </div>
+  </header>
+
+  <main id="top" role="main">
+    <!-- Hero -->
+    <section class="section hero" aria-label="Hero">
+      <div class="container hero-wrap">
+        <div>
+          <div class="eyebrow">Outstanding, Lived Every Day</div>
+          <h1>Outstanding dementia care, lived every day.</h1>
+          <p class="sub">
+            From personalised menus to a Musicality Programme and seven-day activities, we create moments that matter—safely, joyfully, and with proven outcomes.
+          </p>
+          <div class="badges" aria-label="Credentials">
+            <span class="badge" aria-label="CQC Outstanding">CQC Outstanding</span>
+            <span class="badge" aria-label="National award-winning">National award‑winning</span>
+            <span class="badge" aria-label="Butterfly & Eden trained">Butterfly &amp; Eden trained</span>
+          </div>
+          <p class="file-note">This single‑file version is designed to open smoothly on iPhone/iPad. A multi‑page version is also available as a ZIP.</p>
+          <div class="actions">
+            <a class="cta" href="#booking">Book a Discovery Call</a>
+            <a class="cta secondary" href="mailto:pa.courtney@gmail.com?subject=Discovery%20Call%20enquiry">Email us</a>
+          </div>
+        </div>
+
+        <div class="visuals" role="img" aria-label="Visuals showing pub & café, musicality, fine dining and activities">
+          <div class="overlay-tags" aria-hidden="true">
+            <span class="chip">Pub &amp; café</span>
+            <span class="chip">Musicality</span>
+            <span class="chip">Fine dining</span>
+            <span class="chip">7‑day activity</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="impact" class="container">
+        <div class="stats" aria-label="Impact statistics">
+          <div class="stat" role="group" aria-label="Family positivity">
+            <div class="big">98%</div>
+            <div class="label">family positivity</div>
+          </div>
+          <div class="stat" role="group" aria-label="Resident satisfaction">
+            <div class="big">96%</div>
+            <div class="label">resident satisfaction</div>
+          </div>
+          <div class="stat" role="group" aria-label="Staff endorsement">
+            <div class="big">90%</div>
+            <div class="label">staff endorsement</div>
+          </div>
+          <div class="stat" role="group" aria-label="Zero pressure sores in high-risk cohort">
+            <div class="big">0</div>
+            <div class="label">pressure sores in high‑risk cohort</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="section">
+      <div class="container">
+        <h2>You bring your life. We bring the expertise.</h2>
+        <p class="lead">
+          We transform services from challenge to Outstanding by hard‑wiring lived experience into daily practice—visible leadership, evidence‑based care, and environments that spark joy: pub &amp; beer garden, café with barista coffee, fine dining, cinema club, and meaningful activity every single day.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="cards" role="list">
+          <article class="card" role="listitem">
+            <h3>Turnaround programmes for services “in need”</h3>
+            <p>Focused improvement plans that mobilise staff, stabilise quality, and accelerate towards CQC Outstanding.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Dementia Care Excellence audits</h3>
+            <p>Step‑by‑step actions mapped to outcomes, lived experience, and evidence—ready to implement.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Leadership development &amp; in‑house training</h3>
+            <p>Inspirational, passionate leadership frameworks that turn teams into award‑winning practice.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Community, families &amp; end‑of‑life excellence</h3>
+            <p>Open‑door culture and compassionate pathways that honour people and their loved ones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quotes -->
+    <section class="section quotes" aria-label="Quotes">
+      <div class="container q-grid">
+        <blockquote>“You don’t have to leave your life at the door — you bring it with you.”</blockquote>
+        <blockquote>“The home doesn’t shut down — activities 7 days a week.”</blockquote>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking" class="section booking" aria-label="Booking section">
+      <div class="container booking-grid">
+        <div class="panel">
+          <h2>Book a Discovery Call</h2>
+          <p>Prefer to book instantly? Use the calendar below.</p>
+          <div class="calendar-placeholder" aria-label="Calendar booking placeholder">
+            Calendar embed placeholder (Calendly/Google Calendar)
+          </div>
+          <div class="actions">
+            <a class="cta" href="tel:+447956062341" aria-label="Call 07956 062341">Call 07956&nbsp;062341</a>
+            <a class="cta secondary" href="mailto:pa.courtney@gmail.com?subject=Discovery%20Call%20enquiry" aria-label="Email pa.courtney@gmail.com">Email pa.courtney@gmail.com</a>
+          </div>
+        </div>
+        <div class="panel contact">
+          <h3>Or contact directly</h3>
+          <p><strong>Email:</strong> <a href="mailto:pa.courtney@gmail.com">pa.courtney@gmail.com</a><br/>
+             <strong>Tel:</strong> <a href="tel:+447956062341">07956&nbsp;062341</a></p>
+          <p><strong>Address:</strong> United Kingdom (consulting nationwide)</p>
+          <p><em>Ask about our pub &amp; café, Musicality, fine dining, and 7‑day activity playbooks.</em></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="container">
+      © <span id="y"></span> Paul Courtney Care Consulting • Lived experience, proven outcomes
+    </div>
+  </footer>
+
+<script>
+  // Minimal JS: smooth scroll & year
+  document.getElementById('y').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){
+        e.preventDefault();
+        el.scrollIntoView({behavior: 'smooth', block: 'start'});
+        history.pushState(null, '', '#' + id);
+      }
+    });
+  });
+</script>
+</body>
+</html>
